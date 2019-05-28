@@ -1,4 +1,4 @@
-package cn.xy.Controller;
+package cn.xy.controller;
 
 
 import org.springframework.stereotype.Controller;

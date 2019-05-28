@@ -1,7 +1,7 @@
-package cn.xy.Impl;
+package cn.xy.impl;
 
-import cn.xy.Bean.User;
-import cn.xy.Dao.UserDao;
+import cn.xy.bean.User;
+import cn.xy.dao.UserDao;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;

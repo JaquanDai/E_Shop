@@ -1,4 +1,4 @@
-package cn.xy.Bean;
+package cn.xy.bean;
 
 public class User {
 

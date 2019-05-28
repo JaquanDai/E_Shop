@@ -1,7 +1,6 @@
-package cn.xy.Dao;
+package cn.xy.dao;
 
-import cn.xy.Bean.User;
-import org.apache.ibatis.annotations.Select;
+import cn.xy.bean.User;
 
 import java.util.List;
 
