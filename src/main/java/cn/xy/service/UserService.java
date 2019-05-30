@@ -10,7 +10,7 @@ public interface UserService {
     //搜索所有用户
     List<User> getAllUser();
     //添加用户
-    void addUser(User user);
+    boolean addUser(User user);
     //删除用户
     void delUser(int userId);
     //添加地址
@@ -24,6 +24,6 @@ public interface UserService {
     //修改用户电话
     void modifyUserPhone(int userId,String Phone);
     //修改用户昵称
-    void modigyUsername(int userId,String username);
+    boolean modifyUsername(int userId,String username);
 
 }

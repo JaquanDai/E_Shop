@@ -48,10 +48,6 @@
         where user_id=#{userId}
     </update>
 
-    <select id="checkUsername">
-        select * from users where user_name=#{username}
-    </select>
-
     <select id="checkUserAccount">
         select * from users where user_account=#{userAccount}
     </select>

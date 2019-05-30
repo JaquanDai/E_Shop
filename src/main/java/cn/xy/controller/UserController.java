@@ -20,7 +20,8 @@ public class UserController {
     public User findUserById(@PathVariable("user_id") int userId){
         User user = userService.findUserById(userId);
         System.out.println("name"+user.getUser_name());
-
         return user;
     }
+
+
 }

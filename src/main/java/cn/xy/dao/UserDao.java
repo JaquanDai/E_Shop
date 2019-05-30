@@ -36,9 +36,6 @@ public interface UserDao {
     //修改用户昵称
     void modifyUsername(int userId,String username);
 
-    //判断用户名是否重复
-    User checkUsername(String username);
-
     //判断账号是否重复
     User checkUserAccount(String userAccount);
 
