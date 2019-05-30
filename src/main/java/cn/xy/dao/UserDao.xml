@@ -10,5 +10,51 @@
         WHERE user_id = #{userId}
     </select>
 
+    <select id="getAllUsers" resultType="cn.xy.bean.User">
+        SELECT * FROM users
+    </select>
+
+    <insert id="addUser" >
+        INSERT INTO users(user_name,user_pwd,user_account,user_phone,user_status)
+        values(#{userName},#{userPwd},#{userAccount},#{userPhone},'active')
+    </insert>
+
+    <update id="delUser">
+        update users set user_status='delete' where user_id=#{userId}
+    </update>
+
+    <insert id="addAddress">
+        insert into user_address(user_id,address,status)
+        values(#{userId},#{address})
+    </insert>
+
+    <update id="modifyAddress">
+        update user_address set address=#{address}
+        where ua_id=#{uaId}
+    </update>
+
+    <update id="setAddress">
+        update user_address set status='default'
+        where ua_id=#{uaId}
+    </update>
+
+    <update id="modifyUserPhone">
+        update users set user_phone=#{Phone}
+        where user_id=#{userId}
+    </update>
+
+    <update id="modifyUsername">
+        update users set user_name=#{username}
+        where user_id=#{userId}
+    </update>
+
+    <select id="checkUsername">
+        select * from users where user_name=#{username}
+    </select>
+
+    <select id="checkUserAccount">
+        select * from users where user_account=#{userAccount}
+    </select>
+
 </mapper>
 
