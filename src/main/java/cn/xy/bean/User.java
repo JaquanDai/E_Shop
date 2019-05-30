@@ -1,57 +1,50 @@
 package cn.xy.bean;
 
 public class User {
+    //名称要与数据库中一致！！不要转成驼峰形式
+    private int user_id ;
+    private String user_name ;
+    private String user_pwd;
+    private String user_account;
+    private String user_phone ;
 
-    private int userId = 0;
-    private String userName = null;
-    private String userPwd = null;
-    private String userAccount = null;
-
-    public int getUserId() {
-        return userId;
+    public int getUser_id() {
+        return user_id;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUser_name() {
+        return user_name;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUser_name(String user_name) {
+        this.user_name = user_name;
     }
 
-    public String getUserPwd() {
-        return userPwd;
+    public String getUser_pwd() {
+        return user_pwd;
     }
 
-    public void setUserPwd(String userPwd) {
-        this.userPwd = userPwd;
+    public void setUser_pwd(String user_pwd) {
+        this.user_pwd = user_pwd;
     }
 
-    public String getUserAccount() {
-        return userAccount;
+    public String getUser_account() {
+        return user_account;
     }
 
-    public void setUserAccount(String userAccount) {
-        this.userAccount = userAccount;
+    public void setUser_account(String user_account) {
+        this.user_account = user_account;
     }
 
-    public String getUserPhone() {
-        return userPhone;
+    public String getUser_phone() {
+        return user_phone;
     }
 
-    public void setUserPhone(String userPhone) {
-        this.userPhone = userPhone;
+    public void setUser_phone(String user_phone) {
+        this.user_phone = user_phone;
     }
-
-    private String userPhone = null;
-
-
-
-
-
-
 }
