@@ -16,7 +16,7 @@
 
     <insert id="addUser" >
         INSERT INTO users(user_name,user_pwd,user_account,user_phone,user_status)
-        values(#{user_name},#{userPwd},#{userAccount},#{userPhone},'active')
+        values(#{user_name},#{user_pwd},#{user_account},#{user_phone},'active')
     </insert>
 
     <update id="delUser">
@@ -27,6 +27,11 @@
         insert into user_address(user_id,address,status)
         values(#{userId},#{address})
     </insert>
+
+    <update id="delAddress">
+        update user_address set status = 'delete'
+        where ua_id=#{uaId}
+    </update>
 
     <update id="modifyAddress">
         update user_address set address=#{address}
@@ -48,9 +53,45 @@
         where user_id=#{userId}
     </update>
 
-    <select id="checkUserAccount">
+    <select id="checkUserAccount" resultType="cn.xy.bean.User">
         select * from users where user_account=#{userAccount}
     </select>
+
+    <select id="getFirstAddress" resultType="String">
+        select address
+        from user_address
+        where user_id = #{userId}
+        and status = 'default'
+        or status is null
+        order by ua_id ASC
+        limit 1
+    </select>
+
+    <select id="getDefaultAddress" resultType="String">
+        select address
+        from user_address
+        where user_id = #{userId} and status = 'default'
+    </select>
+
+    <select id="checkUserAddress" resultType="cn.xy.bean.UserAddress">
+        SELECT * FROM user_address where user_id = #{userId} and address = #{address}
+    </select>
+
+    <select id="getAllAddress" resultType="cn.xy.bean.UserAddress">
+        SELECT * FROM user_address where user_id = #{userId} and status = 'default' or status is null
+    </select>
+
+    <update id="changeAddressStatusByUAId">
+        update user_address
+        set status = null
+        where ua_id = #{uaId}
+    </update>
+
+    <update id="changeAddressStatusByUserId">
+        update user_address
+        set status = null
+        where user_id = #{userId} and status = 'default'
+    </update>
 
 </mapper>
 
