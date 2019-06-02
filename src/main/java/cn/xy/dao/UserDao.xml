@@ -16,7 +16,7 @@
 
     <insert id="addUser" >
         INSERT INTO users(user_name,user_pwd,user_account,user_phone,user_status)
-        values(#{userName},#{userPwd},#{userAccount},#{userPhone},'active')
+        values(#{user_name},#{userPwd},#{userAccount},#{userPhone},'active')
     </insert>
 
     <update id="delUser">

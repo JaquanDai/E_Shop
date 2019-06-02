@@ -23,5 +23,12 @@ public class UserController {
         return user;
     }
 
+    @RequestMapping("/operator")
+    public void test(){
+//        User user = userService.findUserById(userId);
+//        System.out.println("name"+user.getUser_name());
+//        return user;
+    }
+
 
 }

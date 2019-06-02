@@ -7,6 +7,7 @@ public class User {
     private String user_pwd;
     private String user_account;
     private String user_phone ;
+    private String user_status;
 
     public int getUser_id() {
         return user_id;
