@@ -1,6 +1,7 @@
 package cn.xy.dao;
 
 import cn.xy.bean.User;
+import cn.xy.bean.UserAddress;
 
 import java.util.List;
 
@@ -39,7 +40,21 @@ public interface UserDao {
     //判断账号是否重复
     User checkUserAccount(String userAccount);
 
+    //得到用户的第一个地址
+    String getFirstAddress(int userId);
 
+    //得到用户默认地址
+    String getDefaultAddress(int userId);
 
+    //判断地址是否存在
+    UserAddress checkUserAddress(int userId, String address);
 
+    //得到用户的所有地址
+    List<UserAddress> getAllAddress(int userId);
+
+    //取消该地址为默认地址
+    void changeAddressStatusByUAId(int uaId);
+
+    //取消该用户下的默认地址
+    void changeAddressStatusByUserId(int userId);
 }
