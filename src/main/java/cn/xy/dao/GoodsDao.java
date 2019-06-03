@@ -8,4 +8,6 @@ import java.util.List;
 public interface GoodsDao {
     public List<Goods> getAllGoodsList();
     public Goods getGoodsById(int goodsId);
+    public List<Goods> getGoodsByType(int TypeId);
+    public void addGoods(Goods goods);
 }

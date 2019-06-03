@@ -1,5 +1,6 @@
 package cn.xy.dao;
 
+import cn.xy.bean.GoodsType;
 import cn.xy.bean.Operator;
 import cn.xy.bean.OperatorOrderDetails;
 
@@ -16,6 +17,6 @@ public interface OperatorDao {
     //查询此管理员管理的商品类别
     List<Integer> getTypeIdByOperator(int operatorId);
     //查询此管理员管理的商品
-    List<>
+    List<GoodsType> getTypeByOperator(int type_id);
 
 }

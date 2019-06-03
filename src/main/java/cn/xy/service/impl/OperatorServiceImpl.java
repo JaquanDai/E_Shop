@@ -1,6 +1,7 @@
 package cn.xy.service.impl;
 
 
+import cn.xy.bean.GoodsType;
 import cn.xy.bean.Operator;
 import cn.xy.bean.OperatorOrderDetails;
 import cn.xy.dao.OperatorDao;
@@ -46,8 +47,21 @@ public class OperatorServiceImpl implements OperatorService {
         }
 
         return result;
-    };
+    }
 
+    @Override
+    public List<GoodsType> getGoodsTypeByOperator(int operatorId) {
+
+        List<GoodsType> result = new ArrayList<>();
+        List<Integer> typelist = new ArrayList<>();
+        typelist = operatorDao.getTypeIdByOperator(operatorId);
+        for(int i=0;i<typelist.size();i++){
+            result.addAll(operatorDao.getTypeByOperator(typelist.get(i)));
+        }
+
+        return result;
+
+    }
 
 
 }

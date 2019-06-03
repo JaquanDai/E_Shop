@@ -1,5 +1,6 @@
 package cn.xy.controller;
 
+import cn.xy.bean.GoodsType;
 import cn.xy.bean.OperatorOrderDetails;
 import cn.xy.service.OperatorService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,6 +56,18 @@ public class OperatorController {
         int operatorId = (int) session.getAttribute("operatorId");
 
         result = operatorService.getOrderDetailsByOperator(operatorId);
+
+        return result;
+    }
+
+    @RequestMapping(value = "/listTypeByOperator",method = RequestMethod.POST)
+    @ResponseBody
+    public List<GoodsType> listTypeByOperator(HttpServletRequest request) throws Exception {
+        HttpSession session =request.getSession();
+        List<GoodsType> result = new ArrayList<>();
+        int operatorId = (int) session.getAttribute("operatorId");
+
+        result = operatorService.getGoodsTypeByOperator(operatorId);
 
         return result;
     }

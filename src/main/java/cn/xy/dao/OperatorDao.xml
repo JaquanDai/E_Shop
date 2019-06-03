@@ -20,4 +20,10 @@
         where operator_id = #{operatorId}
     </select>
 
+    <select id="getTypeByOperator"  resultType="cn.xy.bean.GoodsType">
+        select *
+        from goods_type
+        where type_id = #{type_id}
+    </select>
+
 </mapper>

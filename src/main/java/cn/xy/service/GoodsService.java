@@ -9,4 +9,6 @@ import java.util.List;
 public interface GoodsService {
     public List<GoodsByType> getAllGoodsList();
     public Goods getGoodsById(int goodsId);
+    public List<Goods> getGoodsByType(int TypeId);
+    public void addGoods(Goods goods);
 }

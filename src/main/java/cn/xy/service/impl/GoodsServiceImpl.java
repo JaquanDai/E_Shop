@@ -56,4 +56,10 @@ public class GoodsServiceImpl implements GoodsService {
         return goodsDao.getGoodsById(goodsId);
     }
 
+    @Override
+    public List<Goods> getGoodsByType(int TypeId) { return goodsDao.getGoodsByType(TypeId); }
+
+    @Override
+    public void addGoods(Goods goods) { goodsDao.addGoods(goods); }
+
 }

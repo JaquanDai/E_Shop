@@ -6,11 +6,13 @@ import cn.xy.service.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class GoodsController {
@@ -31,5 +33,28 @@ public class GoodsController {
         goods = goodsService.getGoodsById(goodsId);
         return goods;
     }
+
+    @RequestMapping("/listGoodsByTypeId")
+    @ResponseBody
+    public List<Goods> listGoodsByTypeId(@RequestBody(required=true) Map<String,Object> map){
+        List<Goods> goods=new ArrayList<>();
+        goods = goodsService.getGoodsByType((Integer) map.get("type_id"));
+        return goods;
+    }
+
+    @RequestMapping("/addGoods")
+    @ResponseBody
+    public Goods addGoods(@RequestBody(required=true) Map<String,Object> map){
+        Goods goods = new Goods();
+        goods.setType_id((Integer) map.get("type_id"));
+        goods.setGoods_name((String) map.get("goods_name"));
+        goods.setInventory(Integer.parseInt((String) map.get("inventory")));
+        goods.setPrice(Float.parseFloat((String) map.get("price")) );
+        goods.setDescription((String) map.get("describe"));
+        goodsService.addGoods(goods);
+        return goods;
+    }
+
+
 }
 

@@ -17,5 +17,16 @@
         WHERE goods_id = #{goodsId}
     </select>
 
+    <select id="getGoodsByType" resultType="cn.xy.bean.Goods">
+        select *
+        from goods
+        where type_id=#{TypeId} and goods_status = 'active'
+    </select>
+
+    <insert id="addGoods" >
+        insert into goods
+        values(#{goods_id},#{type_id},#{goods_name},#{inventory},#{description},#{price},'default','active',0)
+    </insert>
+
 </mapper>
 
