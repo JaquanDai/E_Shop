@@ -28,5 +28,17 @@
         values(#{goods_id},#{type_id},#{goods_name},#{inventory},#{description},#{price},'default','active',0)
     </insert>
 
+    <update id="modifyGoods" >
+        update goods
+        set goods_name=#{goods_name},inventory=#{inventory},description=#{description},price=#{price}
+        where goods_id=#{goods_id}
+    </update>
+
+    <update id="deleteGoods" >
+        update goods
+        set goods_status='delete'
+        where goods_id=#{goods_id}
+    </update>
+
 </mapper>
 

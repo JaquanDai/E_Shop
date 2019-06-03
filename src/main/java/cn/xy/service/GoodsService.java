@@ -7,8 +7,11 @@ import cn.xy.bean.GoodsType;
 import java.util.List;
 
 public interface GoodsService {
-    public List<GoodsByType> getAllGoodsList();
-    public Goods getGoodsById(int goodsId);
-    public List<Goods> getGoodsByType(int TypeId);
-    public void addGoods(Goods goods);
+    List<GoodsByType> getAllGoodsList();
+    Goods getGoodsById(int goodsId);
+    List<Goods> getGoodsByType(int TypeId);
+    void addGoods(Goods goods);
+    void modifyGoods(Goods goods);
+    void deleteGoods(int goods_id);
+
 }
