@@ -30,6 +30,11 @@ public class OperatorServiceImpl implements OperatorService {
         if(operator == null||!pwd.equals(operator.getOperator_pwd())){
             map.put("code", -1);
         }
+        else if(operator.getOperator_type().equals("super")){
+            map.put("code",1);
+            map.put("account",operator.getOperator_account());
+            map.put("operatorId",operator.getOperator_id());
+        }
         else {
             map.put("code", 0);
             map.put("account",operator.getOperator_account());

@@ -26,5 +26,7 @@ public interface UserService {
     void modifyUserPhone(int userId, String Phone);
     //修改用户昵称
     void modifyUsername(int userId, String username);
+    //登录
+    Map Login(String userAccount,String pwd);
 
 }
