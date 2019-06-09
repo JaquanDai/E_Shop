@@ -5,9 +5,19 @@
 <mapper namespace="cn.xy.dao.GoodsDao">
     <select id="getAllGoodsList"
             resultType="cn.xy.bean.Goods">
-        SELECT *
-        FROM goods
-        ORDER BY type_id
+        SELECT AVG(star) avgstar,g.goods_id,g.goods_img,g.goods_name,g.goods_status,g.description,g.inventory,g.price,g.sales,g.type_id
+        FROM goods g LEFT JOIN comments c ON g.goods_id = c.goods_id
+        GROUP BY g.goods_id
+        ORDER BY g.type_id
+    </select>
+
+    <select id="getSameGoodsList" parameterType="int"
+            resultType="cn.xy.bean.Goods">
+        SELECT AVG(star) avgstar,g.goods_id,g.goods_img,g.goods_name,g.goods_status,g.description,g.inventory,g.price,g.sales,g.type_id
+        FROM goods g LEFT JOIN comments c ON g.goods_id = c.goods_id
+		WHERE g.type_id = (SELECT d.type_id FROM goods d WHERE d.goods_id = #{goods_id}) AND g.goods_id!= #{goods_id}
+		GROUP BY g.goods_id
+        ORDER BY sales DESC
     </select>
 
     <select id="getGoodsById" parameterType="int"
@@ -16,6 +26,12 @@
         FROM goods
         WHERE goods_id = #{goodsId}
     </select>
+
+    <update id="buy">
+        UPDATE goods
+        SET inventory = inventory - #{quantity} , sales = sales + #{quantity}
+        WHERE goods_id = #{goods_id}
+    </update>
 
     <select id="getGoodsByType" resultType="cn.xy.bean.Goods">
         select *
@@ -39,6 +55,12 @@
         set goods_status='delete'
         where goods_id=#{goods_id}
     </update>
+
+
+    <!--<select id="getStar"-->
+            <!--resultType="cn.xy.bean.Goods">-->
+        <!--SELECT goods.goods_id,AVG(star) FROM comments LEFT JOIN goods ON goods.goods_id = comments.goods_id GROUP BY goods.goods_id;-->
+    <!--</select>-->
 
 </mapper>
 

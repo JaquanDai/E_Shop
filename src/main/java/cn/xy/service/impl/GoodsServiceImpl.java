@@ -52,6 +52,11 @@ public class GoodsServiceImpl implements GoodsService {
         return goodsTypeList;
     }
 
+    public List<Goods> getSameGoodsList(int goods_id){
+        List<Goods> goodsList = goodsDao.getSameGoodsList(goods_id);
+        return goodsList;
+    }
+
     public Goods getGoodsById(int goodsId) {
         return goodsDao.getGoodsById(goodsId);
     }
@@ -67,5 +72,4 @@ public class GoodsServiceImpl implements GoodsService {
 
     @Override
     public void deleteGoods(int goods_id) { goodsDao.deleteGoods(goods_id);}
-
 }

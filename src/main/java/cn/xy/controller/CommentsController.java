@@ -1,8 +1,8 @@
 package cn.xy.controller;
 
+import cn.xy.bean.Comments;
 import cn.xy.bean.CommentsReply;
 import cn.xy.bean.Reply;
-import cn.xy.bean.ReplyUser;
 import cn.xy.service.CommentsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,8 +24,14 @@ public class CommentsController {
 
     @RequestMapping(value = "/reply",method = RequestMethod.POST)
     @ResponseBody
-    public ReplyUser addReply(@RequestBody(required=true) Reply reply){
+    public Reply addReply(@RequestBody(required=true) Reply reply){
 
         return commentsService.addReply(reply);
+    }
+
+    @RequestMapping(value = "/addComments",method = RequestMethod.POST)
+    @ResponseBody
+    public CommentsReply addComments(@RequestBody(required=true) Comments comments){
+        return commentsService.addComments(comments);
     }
 }

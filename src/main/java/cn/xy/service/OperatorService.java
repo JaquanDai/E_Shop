@@ -8,7 +8,7 @@ import java.util.Map;
 
 public interface OperatorService {
 
-    Map operatorLogin(String operatorAccount,String pwd);
+    Map operatorLogin(String operatorAccount, String pwd);
 
     List<OperatorOrderDetails> getOrderDetailsByOperator(int operatorId);
 

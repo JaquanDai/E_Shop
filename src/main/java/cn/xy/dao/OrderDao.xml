@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.xy.dao.OrderDao">
+
+    <insert id="addCart" parameterType="cn.xy.bean.Orders" keyProperty="order_id" useGeneratedKeys="true">
+        INSERT INTO orders(user_id,order_status)
+        VALUES (#{user_id},#{order_status})
+    </insert>
+
+    <insert id="addCartDetail" parameterType="cn.xy.bean.OrderDetails" keyProperty="od_id" useGeneratedKeys="true">
+        INSERT INTO order_details(order_id,goods_id,quantity,details_status)
+        VALUES (#{order_id},#{goods_id},#{quantity},#{details_status})
+    </insert>
+
+    <insert id="addOrder" parameterType="cn.xy.bean.Orders" keyProperty="order_id" useGeneratedKeys="true">
+        INSERT INTO orders(user_id,order_time,order_status,order_address,order_price)
+        VALUES (#{user_id},#{order_time},#{order_status},#{order_address},#{order_price})
+    </insert>
+
+    <insert id="addOrderDetail" parameterType="cn.xy.bean.OrderDetails" keyProperty="od_id" useGeneratedKeys="true">
+        INSERT INTO order_details(order_id,goods_id,quantity,details_price,details_status)
+        VALUES (#{order_id},#{goods_id},#{quantity},#{details_price},#{details_status})
+    </insert>
+
+    <update id="cart2order" parameterType="cn.xy.bean.Orders">
+        update orders
+        set user_id=#{user_id},order_time=#{order_time},order_status=#{order_status},order_address=#{order_address},order_price=#{order_price}
+        where order_id=#{order_id}
+    </update>
+
+    <update id="cart2detail" parameterType="cn.xy.bean.OrderDetails">
+        update order_details
+        set quantity=#{quantity},details_price=#{details_price},details_status=#{details_status}
+        where od_id=#{od_id}
+    </update>
+
+    <update id="updateCartQuantity" parameterType="cn.xy.bean.OrderDetails">
+        update order_details
+        set quantity = #{quantity}
+        where od_id=#{od_id}
+    </update>
+
+    <select id="searchCartByUser" parameterType="int" resultType="cn.xy.bean.Orders">
+        select order_id,user_id,order_time,order_status,order_address,order_price
+        from orders
+        where order_status="cart" and user_id=#{user_id}
+    </select>
+
+    <select id="getAllCartDetails" parameterType="int" resultType="cn.xy.bean.OrderDetails">
+        select od_id,order_id,goods_id,quantity,details_price,details_status
+        from order_details
+        where order_id = #{order_id} and details_status="cart"
+    </select>
+
+    <select id="getCartDetails" parameterType="int" resultType="cn.xy.bean.OrderDetails">
+        select od_id,order_id,goods_id,quantity,details_price,details_status
+        from order_details
+        where od_id = #{od_id} and details_status="cart"
+    </select>
+
+    <delete id="deleteCartDetails" parameterType="int">
+        delete from order_details where od_id=#{od_id}
+    </delete>
+
+    <select id="getCart" parameterType="int" resultType="cn.xy.bean.Cart">
+        select d.od_id,g.goods_img,g.price,d.quantity,g.goods_name, g.price*d.quantity as total
+        from order_details d LEFT JOIN goods g ON d.goods_id = g.goods_id
+        where d.order_id=#{order_id} and d.details_status="cart"
+    </select>
+
+    <update id="buy" parameterType="int">
+        update order_details
+        set details_status="do",
+        where od_id=#{od_id}
+    </update>
+
+    <!--<select id="searchCartDetail" parameterType="int" resultType="cn.xy.bean.OrderDetails">-->
+        <!--select od_id,order_id,goods_id,quantity,details_price,details_status-->
+        <!--from order_details-->
+        <!--where goods_id=#{goods_id} and details_status = "cart"-->
+    <!--</select>-->
+
+</mapper>
+

@@ -1,12 +1,21 @@
 package cn.xy.bean;
 
 public class OrderDetails {
-
     private int od_id;
     private int order_id;
     private int goods_id;
     private int quantity;
     private float details_price;
+    private String details_status;
+    private int user_id;
+
+    public int getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
+    }
 
     public int getOd_id() {
         return od_id;
@@ -55,7 +64,4 @@ public class OrderDetails {
     public void setDetails_status(String details_status) {
         this.details_status = details_status;
     }
-
-    private String details_status;
-
 }

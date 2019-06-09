@@ -10,6 +10,15 @@ public class Goods {
     String goods_img;
     String goods_status;
     int sales;
+    float avgstar;
+
+    public float getAvgstar() {
+        return avgstar;
+    }
+
+    public void setAvgstar(float avgstar) {
+        this.avgstar = avgstar;
+    }
 
     public int getGoods_id() {
         return goods_id;
