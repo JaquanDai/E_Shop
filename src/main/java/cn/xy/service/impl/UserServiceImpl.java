@@ -91,4 +91,18 @@ public class UserServiceImpl implements UserService {
     public void modifyUsername(int userId, String username) {
         this.userDao.modifyUsername(userId, username);
     }
+
+    public Map Login(String userAccount,String pwd) {
+        Map<String,Object> map = new HashMap<>();
+        User user = userDao.checkUserAccount(userAccount);
+
+        if(user == null||!pwd.equals(user.getUser_pwd())){
+            map.put("code", -1);
+        }
+        else {
+            map.put("code", 0);
+            map.put("userId",user.getUser_id());
+        }
+        return map;
+    }
 }
