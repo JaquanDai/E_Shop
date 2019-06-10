@@ -4,7 +4,7 @@ import java.util.List;
 
 public class CommentsReply {
     private Comments comments;
-    private List<ReplyUser> replyList;
+    private List<Reply> replyList;
     private String userName;
 
     public Comments getComments() {
@@ -15,11 +15,11 @@ public class CommentsReply {
         this.comments = comments;
     }
 
-    public List<ReplyUser> getReplyList() {
+    public List<Reply> getReplyList() {
         return replyList;
     }
 
-    public void setReplyList(List<ReplyUser> replyList) {
+    public void setReplyList(List<Reply> replyList) {
         this.replyList = replyList;
     }
 

@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -34,6 +32,13 @@ public class GoodsController {
         Goods goods=new Goods();
         goods = goodsService.getGoodsById(goodsId);
         return goods;
+    }
+
+    @RequestMapping("/likeGoods/{goodsId}")
+    @ResponseBody
+    public  List<Goods> getSameGoodsList(@PathVariable("goodsId") int goodsId){
+        return goodsService.getSameGoodsList(goodsId);
+
     }
 
     @RequestMapping("/listGoodsByTypeId")
@@ -78,8 +83,6 @@ public class GoodsController {
     public void deleteGoods(@RequestBody(required=true) Map<String,Object> map){
         goodsService.deleteGoods((Integer) map.get("goods_id"));
     }
-
-
 
 }
 

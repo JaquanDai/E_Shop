@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface CommentsDao {
     public List<Comments> getGoodsComments(int goodsId);
+    public void addComments(Comments comments);
 }

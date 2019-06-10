@@ -1,12 +1,9 @@
 package cn.xy.bean;
 
-import java.sql.Date;
-
 public class Orders {
-
     private int order_id;
     private int user_id;
-    private Date order_time;
+    private int order_time;
     private String order_status;
     private String order_address;
     private float order_price;
@@ -27,11 +24,11 @@ public class Orders {
         this.user_id = user_id;
     }
 
-    public Date getOrder_time() {
+    public int getOrder_time() {
         return order_time;
     }
 
-    public void setOrder_time(Date order_time) {
+    public void setOrder_time(int order_time) {
         this.order_time = order_time;
     }
 

@@ -10,5 +10,11 @@
         WHERE goods_id = #{goodsId}
     </select>
 
+    <insert id="addComments" parameterType="cn.xy.bean.Comments" keyProperty="comment_id" useGeneratedKeys="true">
+        INSERT INTO comments(user_id,goods_id,content,comment_time,star,comment_status)
+        VALUES (#{user_id},#{goods_id},#{content},#{comment_time},#{star},#{comment_status})
+    </insert>
+
+
 </mapper>
 

@@ -3,7 +3,6 @@ package cn.xy.service.impl;
 import cn.xy.bean.Comments;
 import cn.xy.bean.CommentsReply;
 import cn.xy.bean.Reply;
-import cn.xy.bean.ReplyUser;
 import cn.xy.dao.CommentsDao;
 import cn.xy.dao.ReplyDao;
 import cn.xy.dao.UserDao;
@@ -31,30 +30,35 @@ public class CommentsServiceImpl implements CommentsService {
         List<CommentsReply> commentsReplyList = new ArrayList<CommentsReply>();
         for(Comments comment:commentsList){
             List<Reply> replies = replyDao.getReplyByCommentId(comment.getComment_id());
-            List<ReplyUser> replyList = new ArrayList<ReplyUser>();
             for(Reply reply:replies){
                 String name = userDao.getUser(reply.getUser_id()).getUser_name();
-                ReplyUser replyUser = new ReplyUser();
-                replyUser.setReply(reply);
-                replyUser.setUserName(name);
-                replyList.add(replyUser);
+                reply.setUser_name(name);
             }
             String userName = userDao.getUser(comment.getUser_id()).getUser_name();
             CommentsReply commentsReply= new CommentsReply();
             commentsReply.setComments(comment);
-            commentsReply.setReplyList(replyList);
+            commentsReply.setReplyList(replies);
             commentsReply.setUserName(userName);
             commentsReplyList.add(commentsReply);
         }
         return commentsReplyList;
     }
 
-    public ReplyUser addReply(Reply reply) {
-        ReplyUser replyUser = new ReplyUser();
+    public Reply addReply(Reply reply) {
         replyDao.addReply(reply);
-        replyUser.setReply(reply);
         String name = userDao.getUser(reply.getUser_id()).getUser_name();
-        replyUser.setUserName(name);
-        return replyUser;
+        reply.setUser_name(name);
+        return reply;
     }
+
+    public CommentsReply addComments(Comments comments) {
+        commentsDao.addComments(comments);
+        String name = userDao.getUser(comments.getUser_id()).getUser_name();
+        CommentsReply cr = new CommentsReply();
+        cr.setUserName(name);
+        cr.setReplyList(new ArrayList<Reply>());
+        cr.setComments(comments);
+        return cr;
+    }
+
 }

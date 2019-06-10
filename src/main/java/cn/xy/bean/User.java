@@ -9,6 +9,14 @@ public class User {
     private String user_phone ;
     private String user_status ;
 
+    public String getUser_status() {
+        return user_status;
+    }
+
+    public void setUser_status(String user_status) {
+        this.user_status = user_status;
+    }
+
     public int getUser_id() {
         return user_id;
     }
@@ -47,13 +55,5 @@ public class User {
 
     public void setUser_phone(String user_phone) {
         this.user_phone = user_phone;
-    }
-
-    public String getUser_status() {
-        return user_status;
-    }
-
-    public void setUser_status(String user_status) {
-        this.user_status = user_status;
     }
 }
