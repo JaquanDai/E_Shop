@@ -1,6 +1,7 @@
 package cn.xy.service;
 
 import cn.xy.bean.GoodsType;
+import cn.xy.bean.Operator;
 import cn.xy.bean.OperatorOrderDetails;
 
 import java.util.List;
@@ -13,5 +14,7 @@ public interface OperatorService {
     List<OperatorOrderDetails> getOrderDetailsByOperator(int operatorId);
 
     List<GoodsType> getGoodsTypeByOperator(int operatorId);
+
+    List<Operator> getNormalOperator();
 
 }

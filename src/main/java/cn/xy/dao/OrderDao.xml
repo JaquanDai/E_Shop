@@ -45,19 +45,19 @@
     <select id="searchCartByUser" parameterType="int" resultType="cn.xy.bean.Orders">
         select order_id,user_id,order_time,order_status,order_address,order_price
         from orders
-        where order_status="cart" and user_id=#{user_id}
+        where order_status="未付款" and user_id=#{user_id}
     </select>
 
     <select id="getAllCartDetails" parameterType="int" resultType="cn.xy.bean.OrderDetails">
         select od_id,order_id,goods_id,quantity,details_price,details_status
         from order_details
-        where order_id = #{order_id} and details_status="cart"
+        where order_id = #{order_id} and details_status="未付款"
     </select>
 
     <select id="getCartDetails" parameterType="int" resultType="cn.xy.bean.OrderDetails">
         select od_id,order_id,goods_id,quantity,details_price,details_status
         from order_details
-        where od_id = #{od_id} and details_status="cart"
+        where od_id = #{od_id} and details_status="未付款"
     </select>
 
     <delete id="deleteCartDetails" parameterType="int">
@@ -67,12 +67,24 @@
     <select id="getCart" parameterType="int" resultType="cn.xy.bean.Cart">
         select d.od_id,g.goods_img,g.price,d.quantity,g.goods_name, g.price*d.quantity as total
         from order_details d LEFT JOIN goods g ON d.goods_id = g.goods_id
-        where d.order_id=#{order_id} and d.details_status="cart"
+        where d.order_id=#{order_id} and d.details_status="未付款"
     </select>
 
     <update id="buy" parameterType="int">
         update order_details
-        set details_status="do",
+        set details_status="已付款",
+        where od_id=#{od_id}
+    </update>
+
+    <update id="modifyStatus">
+        update order_details
+        set details_status=#{details_status}
+        where od_id=#{od_id}
+    </update>
+
+    <update id="deleteDetails">
+        update order_details
+        set details_status="delete"
         where od_id=#{od_id}
     </update>
 

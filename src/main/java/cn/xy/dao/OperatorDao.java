@@ -19,4 +19,6 @@ public interface OperatorDao {
     //查询此管理员管理的商品
     List<GoodsType> getTypeByOperator(int type_id);
 
+    List<Operator> getNormalOperator();
+
 }

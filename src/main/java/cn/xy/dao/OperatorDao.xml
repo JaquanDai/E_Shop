@@ -11,7 +11,7 @@
     <select id="getOrderdetailsByOperator" resultType="cn.xy.bean.OperatorOrderDetails">
         select od.od_id,o.order_time,u.user_name,u.user_phone,o.order_address,g.goods_name,od.quantity,od.details_price,od.details_status
         from order_details as od,orders as o,users as u,goods as g
-        where od.order_id=o.order_id and o.user_id=u.user_id and od.goods_id=g.goods_id and g.type_id = #{typeId}
+        where od.order_id=o.order_id and o.user_id=u.user_id and od.goods_id=g.goods_id and g.type_id = #{typeId} and od.details_status!="delete"
     </select>
 
     <select id="getTypeIdByOperator"  resultType="int">
@@ -24,6 +24,12 @@
         select *
         from goods_type
         where type_id = #{type_id}
+    </select>
+
+    <select id="getNormalOperator" resultType="cn.xy.bean.Operator">
+        select *
+        from operator
+        where operator_type="normal"
     </select>
 
 </mapper>

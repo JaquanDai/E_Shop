@@ -1,6 +1,7 @@
 package cn.xy.controller;
 
 import cn.xy.bean.GoodsType;
+import cn.xy.bean.Operator;
 import cn.xy.bean.OperatorOrderDetails;
 import cn.xy.service.OperatorService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -70,6 +71,12 @@ public class OperatorController {
         result = operatorService.getGoodsTypeByOperator(operatorId);
 
         return result;
+    }
+
+    @RequestMapping(value = "/getNormalOperator",method = RequestMethod.POST)
+    @ResponseBody
+    public List<Operator> getNormalOperator(){
+        return operatorService.getNormalOperator();
     }
 
 

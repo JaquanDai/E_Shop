@@ -72,6 +72,7 @@ public class GoodsController {
         goods.setGoods_name((String) map.get("goods_name"));
         goods.setInventory(Integer.parseInt((String) map.get("inventory")));
         goods.setPrice(Float.parseFloat((String)map.get("price")));
+        goods.setSales(Integer.parseInt((String)map.get("sales")));
         goods.setDescription((String) map.get("describe"));
         goods.setGoods_status("active");
         goodsService.modifyGoods(goods);

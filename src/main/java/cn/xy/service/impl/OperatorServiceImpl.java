@@ -68,5 +68,10 @@ public class OperatorServiceImpl implements OperatorService {
 
     }
 
+    @Override
+    public List<Operator> getNormalOperator() {
+        return operatorDao.getNormalOperator();
+    }
+
 
 }

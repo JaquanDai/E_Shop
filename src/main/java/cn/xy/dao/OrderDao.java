@@ -3,6 +3,7 @@ package cn.xy.dao;
 import cn.xy.bean.Cart;
 import cn.xy.bean.Orders;
 import cn.xy.bean.OrderDetails;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -20,4 +21,6 @@ public interface OrderDao {
     public void deleteCartDetails(int od_id);
     public List<Cart> getCart(int order_id);
     public void buy(int od_id);
+    public void modifyStatus(@Param("od_id") int od_id, @Param("details_status")String details_status);
+    public void deleteDetails(int od_id);
 }
