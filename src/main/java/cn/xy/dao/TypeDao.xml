@@ -19,8 +19,25 @@
     <select id="getTypeByOperatorId" resultType="cn.xy.bean.GoodsType">
         select gt.type_id,gt.type_name,gt.type_status
         from goods_type as gt,operator_goodstype as og
-        where gt.type_id=og.type_id and operator_id = #{operator_id} and gt.type_status = "active"
+        where gt.type_id=og.type_id and og.operator_id = #{operator_id} and gt.type_status = "active"
     </select>
 
+    <select id="getOtherType" resultType="cn.xy.bean.GoodsType">
+        select goods_type.type_id,type_name,type_status
+        from goods_type
+        left join operator_goodstype
+        on goods_type.type_id=operator_goodstype.type_id
+        where operator_id is null and type_status = "active"
+    </select>
+
+    <delete id="delOperatorGoodsType">
+        delete from operator_goodstype
+        where operator_id=#{operator_id} and type_id=#{type_id}
+    </delete>
+
+    <insert id="addOperatorGoodsType">
+        insert into operator_goodstype(operator_id,type_id)
+        values(#{operator_id},#{type_id})
+    </insert>
 
 </mapper>

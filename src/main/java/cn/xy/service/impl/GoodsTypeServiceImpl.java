@@ -23,4 +23,22 @@ public class GoodsTypeServiceImpl implements GoodsTypeService {
     public List<GoodsType> getTypeByOperatorId(int operator_id) {
         return typeDao.getTypeByOperatorId(operator_id);
     }
+
+    @Override
+    public List<GoodsType> getOtherType(int operator_id) {
+        return typeDao.getOtherType(operator_id);
+    }
+
+    @Override
+    public void delOperatorGoodsType(int operator_id, int type_id) {
+        typeDao.delOperatorGoodsType(operator_id,type_id);
+    }
+
+    @Override
+    public void addOperatorGoodsType(int operator_id, List<Integer> type_id) {
+        for(int i = 0;i<type_id.size();i++){
+            typeDao.addOperatorGoodsType(operator_id,type_id.get(i));
+        }
+
+    }
 }

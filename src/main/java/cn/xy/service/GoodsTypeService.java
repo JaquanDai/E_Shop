@@ -10,4 +10,9 @@ public interface GoodsTypeService {
 
     List<GoodsType> getTypeByOperatorId(int operator_id);
 
+    List<GoodsType> getOtherType(int operator_id);
+
+    void delOperatorGoodsType(int operator_id,int type_id);
+
+    void addOperatorGoodsType(int operator_id,List<Integer> type_id);
 }

@@ -45,4 +45,36 @@ public class GoodsTypeController {
 
         return result;
     }
+
+    @RequestMapping(value = "/getOtherType",method = RequestMethod.POST)
+    @ResponseBody
+    public List<GoodsType> getOtherType(@RequestBody(required=true) Map<String,Object> map, HttpServletRequest request){
+
+        int operator_id = (Integer) map.get("operator_id");
+
+        List<GoodsType> result = new ArrayList<>();
+        result.addAll(goodsTypeService.getOtherType(operator_id));
+
+        return result;
+    }
+
+    @RequestMapping(value = "/delOperatorGoodsType",method = RequestMethod.POST)
+    @ResponseBody
+    public void delOperatorGoodsType(@RequestBody(required=true) Map<String,Object> map, HttpServletRequest request){
+
+        int operator_id = (Integer) map.get("operator_id");
+        int type_id = (Integer) map.get("type_id");
+
+        goodsTypeService.delOperatorGoodsType(operator_id,type_id);
+    }
+
+    @RequestMapping(value = "/addOperatorGoodsType",method = RequestMethod.POST)
+    @ResponseBody
+    public void addOperatorGoodsType(@RequestBody(required=true) Map<String,Object> map, HttpServletRequest request){
+
+        int operator_id = (Integer) map.get("operator_id");
+        List<Integer> type_id = (List<Integer>) map.get("type_id");
+
+        goodsTypeService.addOperatorGoodsType(operator_id,type_id);
+    }
 }
