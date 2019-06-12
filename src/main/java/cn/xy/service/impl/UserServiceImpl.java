@@ -47,7 +47,7 @@ public class UserServiceImpl implements UserService {
         this.userDao.delUser(userId);
     }
 
-    public  Map<String,Object> addAddress(int userId, String address) {
+    public Map<String,Object> addAddress(int userId, String address) {
         Map<String,Object> result = new HashMap<String, Object>();
         UserAddress userAddress = null;
         userAddress = this.userDao.checkUserAddress(userId, address);
@@ -61,14 +61,19 @@ public class UserServiceImpl implements UserService {
             else if (userAddress.getStatus().equals("delete"))
             {
                 this.userDao.changeAddressStatusByUAId(userAddress.getUa_id());
+                userAddress.setStatus(null);
                 result.put("code",0);
             }
         }
         else
         {
-            this.userDao.addAddress(userId, address);
+            userAddress = new UserAddress();
+            userAddress.setUser_id(userId);
+            userAddress.setAddress(address);
+            this.userDao.addAddress(userAddress);
             result.put("code",0);
         }
+        result.put("userAddress",userAddress);
         return result;
     }
 
@@ -80,8 +85,9 @@ public class UserServiceImpl implements UserService {
         this.userDao.modifyAddress(uaId, address);
     }
 
-    public void setAddress(int uaId, String address) {
-        this.userDao.setAddress(uaId, address);
+    public void setAddress(int uaId, int userId) {
+        this.userDao.changeAddressStatusByUserId(userId);
+        this.userDao.setAddress(uaId);
     }
 
     public void modifyUserPhone(int userId, String Phone) {
@@ -104,5 +110,38 @@ public class UserServiceImpl implements UserService {
             map.put("userId",user.getUser_id());
         }
         return map;
+    }
+
+     public Map checkPwd(int userId, String pwd) {
+        Map<String,Object> map = new HashMap<>();
+        User user = userDao.getUser(userId);
+
+        if(user == null||!pwd.equals(user.getUser_pwd())){
+            map.put("code", -1);
+        }
+        else {
+            map.put("code", 0);
+        }
+        return map;
+    }
+
+    public void modifyUserPwd(int userId, String pwd){
+        this.userDao.modifyUserPwd(userId, pwd);
+    }
+
+    public List<UserAddress> getAllUserAddress(int userId){
+        List<UserAddress> userAddresses = this.userDao.getAllAddress(userId);
+        return userAddresses;
+    }
+
+    public String getDefaultAddress(int userId){
+        String userAddress = this.userDao.getDefaultAddress(userId);
+        if(userAddress == null)
+            userAddress = this.userDao.getFirstAddress(userId);
+        return userAddress;
+    }
+
+    public void cancelDefaultAddress(int uaId){
+        this.userDao.changeAddressStatusByUAId(uaId);
     }
 }
