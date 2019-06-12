@@ -23,9 +23,9 @@
         update users set user_status='delete' where user_id=#{userId}
     </update>
 
-    <insert id="addAddress">
+    <insert id="addAddress" parameterType="cn.xy.bean.UserAddress" keyProperty="ua_id" useGeneratedKeys="true">
         insert into user_address(user_id,address,status)
-        values(#{userId},#{address})
+        values(#{user_id},#{address},null)
     </insert>
 
     <update id="delAddress">
@@ -50,6 +50,11 @@
 
     <update id="modifyUsername">
         update users set user_name=#{username}
+        where user_id=#{userId}
+    </update>
+
+    <update id="modifyUserPwd">
+        update users set user_pwd=#{pwd}
         where user_id=#{userId}
     </update>
 

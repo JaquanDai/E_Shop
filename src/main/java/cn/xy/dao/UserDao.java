@@ -2,6 +2,7 @@ package cn.xy.dao;
 
 import cn.xy.bean.User;
 import cn.xy.bean.UserAddress;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -20,22 +21,25 @@ public interface UserDao {
     void delUser(int userId);
 
     //添加地址
-    void addAddress(int userId, String address);
+    void addAddress(UserAddress userAddress);
 
     //删除地址
     void delAddress(int uaId);
 
     //修改地址
-    void modifyAddress(int uaId, String address);
+    void modifyAddress(@Param("uaId")int uaId, @Param("address")String address);
 
     //设置默认地址
-    void setAddress(int uaId, String address);
+    void setAddress(int uaId);
 
     //修改用户电话
-    void modifyUserPhone(int userId, String Phone);
+    void modifyUserPhone(@Param("userId")int userId, @Param("Phone")String Phone);
 
     //修改用户昵称
-    void modifyUsername(int userId, String username);
+    void modifyUsername(@Param("userId")int userId, @Param("username")String username);
+
+    //修改用户密码
+    void modifyUserPwd(@Param("userId")int userId, @Param("pwd")String pwd);
 
     //判断账号是否重复
     User checkUserAccount(String userAccount);
@@ -47,7 +51,7 @@ public interface UserDao {
     String getDefaultAddress(int userId);
 
     //判断地址是否存在
-    UserAddress checkUserAddress(int userId, String address);
+    UserAddress checkUserAddress(@Param("userId")int userId, @Param("address")String address);
 
     //得到用户的所有地址
     List<UserAddress> getAllAddress(int userId);
