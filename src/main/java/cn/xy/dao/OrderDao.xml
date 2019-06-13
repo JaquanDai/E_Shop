@@ -94,5 +94,24 @@
         <!--where goods_id=#{goods_id} and details_status = "cart"-->
     <!--</select>-->
 
+    <select id="getOrdersByStatus" resultType="cn.xy.bean.Orders">
+        select DISTINCT o.order_id, o.user_id, o.order_time, o.order_status, o.order_address, o.order_price
+        from orders o left join order_details od on o.order_id = od.order_id
+        where od.details_status = #{details_status} and o.user_id = #{user_id}
+    </select>
+
+    <select id="getOrderDetails" resultType="cn.xy.bean.OrderDetailAndGood">
+        select d.od_id,g.goods_img,g.price,d.quantity,g.goods_name, g.price*d.quantity as total, d.details_status
+        from order_details d LEFT JOIN goods g ON d.goods_id = g.goods_id
+        where d.order_id=#{order_id}
+    </select>
+
+    <select id="getHistoryOrders" resultType="cn.xy.bean.Orders">
+        select DISTINCT o.order_id, o.user_id, o.order_time, o.order_status, o.order_address, o.order_price
+        from orders o left join order_details od on o.order_id = od.order_id
+        where o.user_id = #{user_id} and od.details_status = "已收货" or od.details_status = "已完成"
+        group by o.order_id desc
+    </select>
+
 </mapper>
 

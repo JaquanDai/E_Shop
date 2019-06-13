@@ -1,5 +1,7 @@
 package cn.xy.controller;
 
+import cn.xy.bean.OrderAndGoodList;
+import cn.xy.bean.OrderList;
 import cn.xy.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -32,7 +36,24 @@ public class OrderController {
         orderService.deleteDetails(od_id);
     }
 
+    @RequestMapping(value = "/getOrdersByStatus",method = RequestMethod.POST)
+    @ResponseBody
+    public List<OrderAndGoodList> getOrdersByStatus(@RequestBody(required=true) Map<String,Object> map, HttpServletRequest request){
+        HttpSession httpSession = request.getSession();
+        int user_id = (int) httpSession.getAttribute("userId");
+        String status = (String) map.get("status");
+        List<OrderAndGoodList> orderLists = orderService.getOrderListByDetailStatus(user_id,status);
+        return orderLists;
+    }
 
+    @RequestMapping(value = "/getHistoryOrders",method = RequestMethod.POST)
+    @ResponseBody
+    public List<OrderAndGoodList> getHistoryOrders(HttpServletRequest request){
+        HttpSession httpSession = request.getSession();
+        int user_id = (int) httpSession.getAttribute("userId");
+        List<OrderAndGoodList> orderLists = orderService.getHistoryOrders(user_id);
+        return orderLists;
+    }
 
 
 }
