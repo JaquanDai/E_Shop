@@ -108,6 +108,7 @@ public class UserServiceImpl implements UserService {
         else {
             map.put("code", 0);
             map.put("userId",user.getUser_id());
+            map.put("userName",user.getUser_name());
         }
         return map;
     }
