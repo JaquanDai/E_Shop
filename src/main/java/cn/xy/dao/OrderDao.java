@@ -22,6 +22,7 @@ public interface OrderDao {
     public void deleteCartDetails(int od_id);
     public List<Cart> getCart(int order_id);
     public void buy(int od_id);
+    public List<OrderDetails> bought(@Param("goods_id")int goods_id,@Param("user_id")int user_id);
     public void modifyStatus(@Param("od_id") int od_id, @Param("details_status")String details_status);
     public void deleteDetails(int od_id);
 

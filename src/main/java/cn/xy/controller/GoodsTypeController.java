@@ -77,4 +77,21 @@ public class GoodsTypeController {
 
         goodsTypeService.addOperatorGoodsType(operator_id,type_id);
     }
+
+    @RequestMapping(value = "/getAllType",method = RequestMethod.POST)
+    @ResponseBody
+    public List<GoodsType> getAllType(){
+
+        List<GoodsType> goodsType = new ArrayList<>();
+        return goodsTypeService.getAllType();
+    }
+
+    @RequestMapping(value = "/deleteType",method = RequestMethod.POST)
+    @ResponseBody
+    public void deleteType(@RequestBody(required=true) Map<String,Object> map){
+
+        int type_id = (int) map.get("type_id");
+        goodsTypeService.deleteGoodsByType(type_id);
+        goodsTypeService.deleteType(type_id);
+    }
 }

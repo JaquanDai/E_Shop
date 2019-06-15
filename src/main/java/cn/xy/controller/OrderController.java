@@ -21,6 +21,14 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
+    @RequestMapping(value = "/bought",method = RequestMethod.POST)
+    @ResponseBody
+    public Map<String,Integer> bought(@RequestBody(required=true) Map<String,Object> map){
+        int goods_id = (int) map.get("goods_id");
+        int user_id = (int) map.get("user_id");
+        //System.out.println(goods_id+"---------"+user_id);
+        return orderService.bought(goods_id,user_id);
+    }
     @RequestMapping(value = "/modifyOrderStatus",method = RequestMethod.POST)
     @ResponseBody
     public void modifyOrderStatus(@RequestBody(required=true) Map<String,Object> map, HttpServletRequest request){

@@ -3,14 +3,15 @@ package cn.xy.controller;
 import cn.xy.bean.Cart;
 import cn.xy.bean.OrderDetails;
 import cn.xy.bean.OrderList;
+import cn.xy.bean.UserAddress;
 import cn.xy.service.CartService;
+import cn.xy.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Map;
 
@@ -18,6 +19,9 @@ import java.util.Map;
 public class CartController {
     @Autowired
     private CartService cartService;
+
+    @Autowired
+    private UserService userService;
 
     @RequestMapping(value = "/addCart",method = RequestMethod.POST)
     @ResponseBody
@@ -43,5 +47,12 @@ public class CartController {
     @ResponseBody
     public OrderList buy(@RequestBody(required=true)OrderList orderList){
         return cartService.buy(orderList);
+    }
+
+    @RequestMapping("/getAllAddress/{user_id}")
+    @ResponseBody
+    public List<UserAddress> getUserAddress(@PathVariable("user_id") int userId){
+        List<UserAddress> userAddresses = userService.getAllUserAddress(userId);
+        return userAddresses;
     }
 }

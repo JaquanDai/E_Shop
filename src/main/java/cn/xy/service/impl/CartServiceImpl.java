@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -49,8 +50,19 @@ public class CartServiceImpl implements CartService {
     }
 
     public List<Cart> getCart(int user_id) {
-        int order_id = orderDao.searchCartByUser(user_id).getOrder_id();
-        return orderDao.getCart(order_id);
+        //System.out.println(user_id+"------------------------------------");
+        List<Cart> list = new ArrayList<>();
+        Orders orders = orderDao.searchCartByUser(user_id);
+        if(orders==null){
+            //System.out.println("null!!!!");
+            return list;
+        }
+        int order_id = orders.getOrder_id();
+
+        list = orderDao.getCart(order_id);
+        return list;
+
+
     }
 
     public List<Cart> updateCart(List<Cart> carts){
@@ -97,7 +109,7 @@ public class CartServiceImpl implements CartService {
                 int id=cart.getOd_id();
                 OrderDetails details = orderDao.getCartDetails(id);
                 //System.out.println(details.getGoods_id()+"-----------------------"+cart.getQuantity());
-                //goodsDao.buy(details.getGoods_id(),cart.getQuantity());
+                goodsDao.buy(details.getGoods_id(),cart.getQuantity());
                 details.setOrder_id(order.getOrder_id());
                 details.setDetails_price(cart.getTotal());
                 details.setQuantity(cart.getQuantity());
@@ -112,7 +124,7 @@ public class CartServiceImpl implements CartService {
             for(Cart cart:carts){
                 int id=cart.getOd_id();
                 OrderDetails details = orderDao.getCartDetails(id);
-                //goodsDao.buy(details.getGoods_id(),cart.getQuantity());
+                goodsDao.buy(details.getGoods_id(),cart.getQuantity());
                 details.setQuantity(cart.getQuantity());
                 details.setDetails_status("已付款");
                 details.setDetails_price(cart.getTotal());

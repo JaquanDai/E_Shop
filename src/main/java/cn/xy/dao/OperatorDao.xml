@@ -32,4 +32,15 @@
         where operator_type="normal"
     </select>
 
+    <insert id="addOperator">
+        insert into operator(operator_account,operator_pwd,operator_type,operator_status)
+        values (#{operator_account},#{operator_pwd},"normal","active")
+    </insert>
+
+    <select id="getOperatorByType" resultType="cn.xy.bean.Operator">
+        select o.operator_id,operator_account
+        from operator as o,operator_goodstype as og
+        where o.operator_id = og.operator_id and og.type_id = #{type_id}
+    </select>
+
 </mapper>

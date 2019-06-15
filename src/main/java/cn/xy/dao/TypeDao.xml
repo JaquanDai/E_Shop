@@ -23,12 +23,17 @@
     </select>
 
     <select id="getOtherType" resultType="cn.xy.bean.GoodsType">
-        select goods_type.type_id,type_name,type_status
+        select type_id,type_name,type_status from goods_type LEFT JOIN
+        (select goods_type.type_id as i,operator_goodstype.operator_id
         from goods_type
         left join operator_goodstype
         on goods_type.type_id=operator_goodstype.type_id
-        where operator_id is null and type_status = "active"
+        where operator_id = #{operator_id} and type_status = "active") as t2
+        on goods_type.type_id = t2.i
+        where t2.operator_id is null  and goods_type.type_status = "active"
     </select>
+
+
 
     <delete id="delOperatorGoodsType">
         delete from operator_goodstype
@@ -39,5 +44,22 @@
         insert into operator_goodstype(operator_id,type_id)
         values(#{operator_id},#{type_id})
     </insert>
+
+    <select id="getAllType" resultType="cn.xy.bean.GoodsType">
+        select * from goods_type where type_status="active"
+    </select>
+
+    <update id="deleteType" >
+        update goods_type
+        set type_status = "delete"
+        where type_id = #{type_id}
+    </update>
+
+
+    <update id="deleteGoodsByType" >
+        update goods
+        set goods_status = "delete"
+        where type_id = #{type_id}
+    </update>
 
 </mapper>

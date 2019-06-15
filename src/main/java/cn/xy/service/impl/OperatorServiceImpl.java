@@ -73,5 +73,24 @@ public class OperatorServiceImpl implements OperatorService {
         return operatorDao.getNormalOperator();
     }
 
+    @Override
+    public Map<String, Integer> addOperator(String operator_account, String operator_pwd) {
+        Map<String,Integer> result = new HashMap<>();
+        if(operatorDao.getOperatorByAccount(operator_account)==null) {
+            result.put("code", 1);
+            operatorDao.addOperator(operator_account, operator_pwd);
+        }else {
+            result.put("code",-1);
+        }
+
+        return result;
+
+    }
+
+    @Override
+    public List<Operator> getOperatorByType(int type_id) {
+        return operatorDao.getOperatorByType(type_id);
+    }
+
 
 }
