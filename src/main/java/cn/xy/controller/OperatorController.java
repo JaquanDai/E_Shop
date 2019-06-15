@@ -79,6 +79,27 @@ public class OperatorController {
         return operatorService.getNormalOperator();
     }
 
+    @RequestMapping(value = "/addOperator",method = RequestMethod.POST)
+    @ResponseBody
+    public Map<String,Integer> addOperator(@RequestBody(required=true) Map<String,Object> map){
+
+        String operator_account = (String)map.get("operator_account");
+        String operator_pwd = (String)map.get("operator_pwd");
+
+        return operatorService.addOperator(operator_account,operator_pwd);
+
+    }
+
+    @RequestMapping(value = "/getOperatorByType",method = RequestMethod.POST)
+    @ResponseBody
+    public List<Operator> getOperatorByType(@RequestBody(required=true) Map<String,Object> map){
+
+        int type_id = (int)map.get("type_id");
+
+        return operatorService.getOperatorByType(type_id);
+
+    }
+
 
 
 }

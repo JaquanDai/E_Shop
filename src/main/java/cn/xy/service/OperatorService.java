@@ -17,4 +17,8 @@ public interface OperatorService {
 
     List<Operator> getNormalOperator();
 
+    Map<String,Integer> addOperator(String operator_account,String operator_pwd);
+    //获得管理该
+    List<Operator> getOperatorByType(int type_id);
+
 }

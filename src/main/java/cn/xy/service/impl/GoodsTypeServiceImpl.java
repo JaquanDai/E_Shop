@@ -41,4 +41,19 @@ public class GoodsTypeServiceImpl implements GoodsTypeService {
         }
 
     }
+
+    @Override
+    public List<GoodsType> getAllType() {
+        return typeDao.getAllType();
+    }
+
+    @Override
+    public void deleteType(int type_id) {
+        typeDao.deleteType(type_id);
+    }
+
+    @Override
+    public void deleteGoodsByType(int type_id) {
+        typeDao.deleteGoodsByType(type_id);
+    }
 }

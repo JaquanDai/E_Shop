@@ -7,23 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9483d9c-63b1-4b30-8731-f450e0524702" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/xy/controller/GoodsTypeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/xy/controller/OrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/xy/service/GoodsTypeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/xy/service/OrderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/xy/service/impl/GoodsTypeServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/xy/service/impl/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/xy/controller/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/xy/controller/GoodsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/xy/controller/GoodsTypeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/xy/controller/GoodsTypeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/xy/controller/OperatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/xy/controller/OperatorController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/xy/dao/OperatorDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/xy/dao/OperatorDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/xy/dao/OperatorDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/xy/dao/OperatorDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/xy/dao/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/xy/dao/OrderDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/xy/dao/OrderDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/xy/dao/OrderDao.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/xy/dao/TypeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/xy/dao/TypeDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/xy/dao/TypeDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/xy/dao/TypeDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/xy/service/GoodsTypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/xy/service/GoodsTypeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/xy/service/OperatorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/xy/service/OperatorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/xy/service/impl/GoodsTypeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/xy/service/impl/GoodsTypeServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/xy/service/impl/OperatorServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/xy/service/impl/OperatorServiceImpl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -39,69 +32,76 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/controller/GoodsTypeController.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/dao/CommentsDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="37" column="17" lean-forward="true" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="152">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/dao/TypeDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/dao/TypeDao.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/bean/Comments.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="228">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/service/impl/GoodsTypeServiceImpl.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/bean/CommentsReply.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="304">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/service/GoodsTypeService.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/dao/OperatorDao.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="22" lean-forward="true" selection-start-column="22" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="190">
+              <caret line="10" column="88" selection-start-line="10" selection-start-column="88" selection-end-line="10" selection-end-column="88" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/dao/UserDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/dao/UserDao.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="7" column="65" selection-start-line="7" selection-start-column="65" selection-end-line="7" selection-end-column="65" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/bean/Reply.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/controller/OperatorController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-968">
-              <caret line="12" column="60" lean-forward="true" selection-start-line="12" selection-start-column="60" selection-end-line="12" selection-end-column="60" />
+            <state relative-caret-position="549">
+              <caret line="68" column="63" selection-start-line="68" selection-start-column="53" selection-end-line="68" selection-end-column="63" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#3005#3006#0" expanded="true" />
                 <element signature="e#3063#3064#0" expanded="true" />
               </folding>
@@ -126,6 +126,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>do</find>
+      <find>getSession</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -173,14 +174,14 @@
         <option value="$PROJECT_DIR$/src/main/java/cn/xy/service/impl/OrderServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/xy/dao/OrderDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/xy/dao/OrderDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/xy/controller/GoodsController.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/xy/dao/OperatorDao.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/xy/service/OperatorService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/xy/controller/OperatorController.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/xy/dao/OperatorDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/xy/service/impl/OperatorServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/xy/controller/GoodsController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/xy/dao/TypeDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/xy/service/OperatorService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/xy/controller/OperatorController.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/xy/dao/TypeDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/xy/dao/TypeDao.xml" />
         <option value="$PROJECT_DIR$/src/main/java/cn/xy/service/GoodsTypeService.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/xy/service/impl/GoodsTypeServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/xy/controller/GoodsTypeController.java" />
@@ -195,10 +196,10 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="524" />
-    <option name="y" value="-893" />
-    <option name="width" value="1080" />
-    <option name="height" value="698" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1937" />
+    <option name="height" value="1097" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -247,15 +248,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="xy" type="462c0819:PsiDirectoryNode" />
-              <item name="bean" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="E_Shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="E_Shop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="xy" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -266,32 +258,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="xy" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="E_Shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="E_Shop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="xy" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="E_Shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="E_Shop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="xy" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="E_Shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="E_Shop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -478,6 +444,13 @@
       <workItem from="1560149516583" duration="10560000" />
       <workItem from="1560210963343" duration="8037000" />
       <workItem from="1560245664134" duration="4075000" />
+      <workItem from="1560346945996" duration="4792000" />
+      <workItem from="1560390270217" duration="7174000" />
+      <workItem from="1560414086340" duration="98000" />
+      <workItem from="1560422980089" duration="3793000" />
+      <workItem from="1560489427066" duration="21000" />
+      <workItem from="1560499993295" duration="1338000" />
+      <workItem from="1560568420270" duration="596000" />
     </task>
     <task id="LOCAL-00001" summary="userMapper&amp;&amp;userDao">
       <created>1559223069861</created>
@@ -539,13 +512,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127775000" />
+    <option name="totallyTimeSpent" value="145804000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="104" y="-1088" width="1936" height="1066" extended-state="6" />
+    <frame x="-7" y="-7" width="1455" height="944" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18017058" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16177523" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -555,14 +528,14 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.39484978" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.39484978" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.27463055" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32881773" />
+      <window_info anchor="bottom" id="Application Servers" order="7" sideWeight="0.49946696" weight="0.25643778" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50053304" side_tool="true" weight="0.37124464" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5010661" side_tool="true" weight="0.03218884" />
       <window_info anchor="bottom" id="Spring" order="10" weight="0.32881773" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32832617" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
@@ -590,113 +563,14 @@
     <MESSAGE value="update" />
     <MESSAGE value="addgoods" />
     <MESSAGE value="modifygoods" />
-    <option name="LAST_COMMIT_MESSAGE" value="modifygoods" />
+    <MESSAGE value="super operator operate normal operator" />
+    <option name="LAST_COMMIT_MESSAGE" value="super operator operate normal operator" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/springmvc-config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/dao/UserDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1064">
-          <caret line="56" column="54" selection-start-line="56" selection-start-column="54" selection-end-line="56" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/dao/GoodsDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/bean/Orders.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/bean/GoodsType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/bean/OperatorOrderDetails.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="21" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="21" />
-          <folding>
-            <element signature="e#381#382#0" expanded="true" />
-            <element signature="e#409#410#0" expanded="true" />
-            <element signature="e#448#449#0" expanded="true" />
-            <element signature="e#482#483#0" expanded="true" />
-            <element signature="e#518#519#0" expanded="true" />
-            <element signature="e#550#551#0" expanded="true" />
-            <element signature="e#600#601#0" expanded="true" />
-            <element signature="e#642#643#0" expanded="true" />
-            <element signature="e#674#675#0" expanded="true" />
-            <element signature="e#705#706#0" expanded="true" />
-            <element signature="e#750#751#0" expanded="true" />
-            <element signature="e#790#791#0" expanded="true" />
-            <element signature="e#829#830#0" expanded="true" />
-            <element signature="e#865#866#0" expanded="true" />
-            <element signature="e#922#923#0" expanded="true" />
-            <element signature="e#972#973#0" expanded="true" />
-            <element signature="e#1012#1013#0" expanded="true" />
-            <element signature="e#1048#1049#0" expanded="true" />
-            <element signature="e#1106#1107#0" expanded="true" />
-            <element signature="e#1156#1157#0" expanded="true" />
-            <element signature="e#1190#1191#0" expanded="true" />
-            <element signature="e#1223#1224#0" expanded="true" />
-            <element signature="e#1272#1273#0" expanded="true" />
-            <element signature="e#1316#1317#0" expanded="true" />
-            <element signature="e#1353#1354#0" expanded="true" />
-            <element signature="e#1386#1387#0" expanded="true" />
-            <element signature="e#1438#1439#0" expanded="true" />
-            <element signature="e#1482#1483#0" expanded="true" />
-            <element signature="e#1523#1524#0" expanded="true" />
-            <element signature="e#1560#1561#0" expanded="true" />
-            <element signature="e#1620#1621#0" expanded="true" />
-            <element signature="e#1672#1673#0" expanded="true" />
-            <element signature="e#1709#1710#0" expanded="true" />
-            <element signature="e#1742#1743#0" expanded="true" />
-            <element signature="e#1794#1795#0" expanded="true" />
-            <element signature="e#1838#1839#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/controller/CartController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="817">
-          <caret line="43" column="49" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -762,16 +636,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="84" column="29" selection-start-line="84" selection-start-column="16" selection-end-line="84" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/controller/OrderController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -960,24 +824,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/service/impl/GoodsServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/dao/OperatorDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/dao/OperatorDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
+        <state relative-caret-position="-1576">
+          <caret line="43" column="31" lean-forward="true" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -986,25 +836,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/controller/GoodsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
+        <state relative-caret-position="95">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/service/OperatorService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/controller/OrderController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+        <state relative-caret-position="437">
+          <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/dao/TypeDao.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.4.6/mybatis-3.4.6.jar!/org/apache/ibatis/binding/MapperProxy.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+        <state relative-caret-position="179">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/dao/OperatorDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1013,60 +870,147 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/service/impl/OperatorServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" selection-start-line="17" selection-end-line="18" selection-end-column="14" />
+        <state relative-caret-position="286">
+          <caret line="90" column="24" selection-start-line="90" selection-start-column="24" selection-end-line="90" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2344#2345#0" expanded="true" />
             <element signature="e#2398#2399#0" expanded="true" />
+            <element signature="e#2898#2899#0" expanded="true" />
+            <element signature="e#2925#2926#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/service/OperatorService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/service/impl/GoodsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="73" column="40" selection-start-line="73" selection-start-column="32" selection-end-line="73" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/dao/TypeDao.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="438">
+          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/service/impl/GoodsTypeServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+        <state relative-caret-position="343">
+          <caret line="56" column="41" selection-start-line="56" selection-start-column="41" selection-end-line="56" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#770#771#0" expanded="true" />
+            <element signature="e#826#827#0" expanded="true" />
+            <element signature="e#1258#1259#0" expanded="true" />
+            <element signature="e#1301#1302#0" expanded="true" />
+            <element signature="e#1358#1359#0" expanded="true" />
+            <element signature="e#1394#1395#0" expanded="true" />
+            <element signature="e#1465#1466#0" expanded="true" />
+            <element signature="e#1487#1488#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/service/GoodsTypeService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="22" lean-forward="true" selection-start-column="22" selection-end-column="22" />
+        <state relative-caret-position="418">
+          <caret line="22" column="38" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/controller/OperatorController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-968">
-          <caret line="12" column="60" lean-forward="true" selection-start-line="12" selection-start-column="60" selection-end-line="12" selection-end-column="60" />
-          <folding>
-            <element signature="e#3005#3006#0" expanded="true" />
-            <element signature="e#3063#3064#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/controller/GoodsTypeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="37" column="17" lean-forward="true" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
+        <state relative-caret-position="692">
+          <caret line="93" column="52" lean-forward="true" selection-start-line="93" selection-start-column="52" selection-end-line="93" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/dao/TypeDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="26" column="40" selection-start-line="25" selection-start-column="3" selection-end-line="26" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/dao/CommentsDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/bean/Comments.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/bean/CommentsReply.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/dao/OperatorDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="88" selection-start-line="10" selection-start-column="88" selection-end-line="10" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/dao/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/dao/UserDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="65" selection-start-line="7" selection-start-column="65" selection-end-line="7" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/bean/Reply.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/xy/controller/OperatorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="549">
+          <caret line="68" column="63" selection-start-line="68" selection-start-column="53" selection-end-line="68" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3005#3006#0" expanded="true" />
+            <element signature="e#3063#3064#0" expanded="true" />
           </folding>
         </state>
       </provider>
