@@ -26,7 +26,7 @@ public class CartServiceImpl implements CartService {
 
         if(cart == null){
             cart =new Orders();
-            cart.setOrder_status("cart");
+            cart.setOrder_status("未付款");
             cart.setUser_id(user_id);
             orderDao.addCart(cart);
         }
@@ -101,7 +101,7 @@ public class CartServiceImpl implements CartService {
                 details.setOrder_id(order.getOrder_id());
                 details.setDetails_price(cart.getTotal());
                 details.setQuantity(cart.getQuantity());
-                details.setDetails_status("do");
+                details.setDetails_status("已付款");
                 orderDao.addOrderDetail(details);
                 orderDao.deleteCartDetails(id);
 
@@ -114,7 +114,7 @@ public class CartServiceImpl implements CartService {
                 OrderDetails details = orderDao.getCartDetails(id);
                 //goodsDao.buy(details.getGoods_id(),cart.getQuantity());
                 details.setQuantity(cart.getQuantity());
-                details.setDetails_status("do");
+                details.setDetails_status("已付款");
                 details.setDetails_price(cart.getTotal());
                 orderDao.cart2detail(details);
             }
