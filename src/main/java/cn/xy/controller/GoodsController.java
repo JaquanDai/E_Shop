@@ -13,7 +13,10 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 public class GoodsController {
@@ -147,6 +150,5 @@ public class GoodsController {
             return new Result(false, "上传失败");
         }
     }
-
 }
 

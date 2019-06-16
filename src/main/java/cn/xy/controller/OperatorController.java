@@ -162,7 +162,6 @@ public class OperatorController {
 
     }
 
-
     @RequestMapping(value = "/OperatorLogout",method = RequestMethod.POST)
     @ResponseBody
     public void OperatorLogout(HttpServletRequest request){
@@ -170,9 +169,7 @@ public class OperatorController {
         HttpSession session =request.getSession();
         session.removeAttribute("operatorId");
 
-
     }
-
 
 
 }
