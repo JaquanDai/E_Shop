@@ -7,7 +7,7 @@
             resultType="cn.xy.bean.Comments">
         SELECT *
         FROM comments
-        WHERE goods_id = #{goodsId}
+        WHERE goods_id = #{goodsId} AND comment_status="active"
     </select>
 
     <insert id="addComments" parameterType="cn.xy.bean.Comments" keyProperty="comment_id" useGeneratedKeys="true">

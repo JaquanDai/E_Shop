@@ -9,7 +9,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 @Transactional
@@ -17,7 +19,17 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     private OrderDao orderDao;
-
+    @Override
+    public Map<String,Integer> bought(int goods_id,int user_id){
+        List<OrderDetails> list = orderDao.bought(goods_id,user_id);
+        Map<String,Integer> map = new HashMap<>();
+        if(list.size()!=0){
+            map.put("code",1);
+        }else {
+            map.put("code",0);
+        }
+        return map;
+    }
     @Override
     public void modifyStatus(int od_id, String details_status) {
         orderDao.modifyStatus(od_id,details_status);

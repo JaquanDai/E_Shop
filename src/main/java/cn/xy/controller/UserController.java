@@ -144,4 +144,28 @@ public class UserController {
         }
     }
 
+    @RequestMapping("/logout")
+    @ResponseBody
+    public void logout(HttpServletRequest request){
+        HttpSession session = request.getSession();
+        session.removeAttribute("userId");
+    }
+
+    @RequestMapping("/reg")
+    @ResponseBody
+    public Map reg(@RequestBody(required=true) Map<String,Object> map, HttpServletRequest request){
+        String user_account = (String) map.get("userAccount");
+        String user_name = (String) map.get("userName");
+        String user_phone = (String) map.get("phone");
+        String user_pwd = (String) map.get("password");
+        String user_status = "active";
+        User user = new User();
+        user.setUser_account(user_account);
+        user.setUser_name(user_name);
+        user.setUser_phone(user_phone);
+        user.setUser_pwd(user_pwd);
+        user.setUser_status(user_status);
+        Map result = userService.addUser(user);
+        return result;
+    }
 }

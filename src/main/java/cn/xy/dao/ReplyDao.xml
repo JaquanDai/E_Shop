@@ -7,7 +7,7 @@
             resultType="cn.xy.bean.Reply">
         SELECT *
         FROM reply
-        WHERE comment_id = #{commentId}
+        WHERE comment_id = #{commentId} AND reply_status = "active"
     </select>
 
     <insert id="addReply" parameterType="cn.xy.bean.Reply" keyProperty="reply_id" useGeneratedKeys="true">

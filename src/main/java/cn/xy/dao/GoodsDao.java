@@ -2,6 +2,7 @@ package cn.xy.dao;
 
 import cn.xy.bean.Goods;
 import cn.xy.bean.GoodsType;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 import java.util.Map;
@@ -15,5 +16,5 @@ public interface GoodsDao {
     void modifyGoods(Goods goods);
     void deleteGoods(int goods_id);
 
-    public void buy(int goods_id,int quantity);
+    public void buy(@Param("goods_id")int goods_id,@Param("quantity") int quantity);
 }
