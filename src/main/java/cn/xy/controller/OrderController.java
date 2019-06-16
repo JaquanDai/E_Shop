@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -29,12 +30,33 @@ public class OrderController {
         //System.out.println(goods_id+"---------"+user_id);
         return orderService.bought(goods_id,user_id);
     }
+
     @RequestMapping(value = "/modifyOrderStatus",method = RequestMethod.POST)
     @ResponseBody
-    public void modifyOrderStatus(@RequestBody(required=true) Map<String,Object> map, HttpServletRequest request){
+    public Map<String ,Integer> modifyOrderStatus(@RequestBody(required=true) Map<String,Object> map, HttpServletRequest request){
+
+        Map<String ,Integer> result = new HashMap<>();
+
         int od_id = (int) map.get("od_id");
+        String status = orderService.getOrderDetailsStatusByOrderDetailsId(od_id);
         String details_status = (String) map.get("newstatus");
-        orderService.modifyStatus(od_id,details_status);
+
+        if(status.equals("未付款")){
+            result.put("code",-1);
+            return result;
+        }
+        if(status.equals("已付款")&&details_status.equals("已发货")){
+            orderService.modifyStatus(od_id,details_status);
+            result.put("code",1);
+            return result;
+        }else if(status.equals("已收货")&&details_status.equals("已完成")){
+            orderService.modifyStatus(od_id,details_status);
+            result.put("code",1);
+            return result;
+        }else{
+            result.put("code",-2);
+            return result;
+        }
     }
 
     @RequestMapping(value = "/deleteDetails",method = RequestMethod.POST)

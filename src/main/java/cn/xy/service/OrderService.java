@@ -22,4 +22,6 @@ public interface OrderService {
 
     List<OrderAndGoodList> getHistoryOrders(int user_id);
 
+    String getOrderDetailsStatusByOrderDetailsId(int od_id);
+
 }

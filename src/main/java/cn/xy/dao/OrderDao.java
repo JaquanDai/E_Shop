@@ -34,4 +34,7 @@ public interface OrderDao {
 
     //得到已完成的历史的订单
     List<Orders> getHistoryOrders(int order_id);
+
+    //得到订单状态
+    String getOrderDetailsStatusByOrderDetailsId(int od_id);
 }

@@ -30,7 +30,7 @@
         on goods_type.type_id=operator_goodstype.type_id
         where operator_id = #{operator_id} and type_status = "active") as t2
         on goods_type.type_id = t2.i
-        where t2.operator_id is null
+        where t2.operator_id is null and goods_type.type_status = "active"
     </select>
 
 

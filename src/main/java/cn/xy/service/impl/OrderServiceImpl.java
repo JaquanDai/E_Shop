@@ -68,4 +68,11 @@ public class OrderServiceImpl implements OrderService {
         return orderLists;
     }
 
+    @Override
+    public String getOrderDetailsStatusByOrderDetailsId(int od_id){
+        return orderDao.getOrderDetailsStatusByOrderDetailsId(od_id);
+    }
+
+
+
 }

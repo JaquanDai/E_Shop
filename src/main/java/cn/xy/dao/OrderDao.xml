@@ -119,5 +119,11 @@
         group by o.order_id desc
     </select>
 
+    <select id="getOrderDetailsStatusByOrderDetailsId" resultType="String">
+        select details_status
+        from order_details
+        where od_id = #{od_id}
+    </select>
+
 </mapper>
 
