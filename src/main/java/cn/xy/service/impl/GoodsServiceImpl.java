@@ -52,6 +52,12 @@ public class GoodsServiceImpl implements GoodsService {
         return goodsTypeList;
     }
 
+    public List<Goods> getSearchGoodsList(String name){
+        name = "%"+name+"%";
+        List<Goods> goodsList = goodsDao.getSearchGoodsList(name);
+        return goodsList;
+    }
+
     public List<Goods> getSameGoodsList(int goods_id){
         List<Goods> goodsList = goodsDao.getSameGoodsList(goods_id);
         return goodsList;

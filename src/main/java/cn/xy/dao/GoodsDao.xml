@@ -12,6 +12,19 @@
         ORDER BY g.type_id
     </select>
 
+    <select id="getSearchGoodsList" parameterType="String"
+            resultType="cn.xy.bean.Goods">
+        SELECT AVG(star) avgstar,g.goods_id,g.goods_img,g.goods_name,g.goods_status,g.description,g.inventory,g.price,g.sales,g.type_id
+        FROM goods g LEFT JOIN comments c ON g.goods_id = c.goods_id
+        WHERE g.goods_status="active" AND g.goods_name LIKE #{name} OR g.type_id =
+					(SELECT goods_type.type_id
+						FROM goods LEFT JOIN goods_type ON goods.goods_id = goods_type.type_id
+						WHERE goods_type.type_name LIKE #{name}
+					)
+        GROUP BY g.goods_id
+        ORDER BY g.sales DESC
+    </select>
+
     <select id="getSameGoodsList" parameterType="int"
             resultType="cn.xy.bean.Goods">
         SELECT AVG(star) avgstar,g.goods_id,g.goods_img,g.goods_name,g.goods_status,g.description,g.inventory,g.price,g.sales,g.type_id

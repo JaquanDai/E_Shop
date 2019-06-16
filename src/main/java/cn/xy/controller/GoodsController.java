@@ -42,6 +42,14 @@ public class GoodsController {
 
     }
 
+    @RequestMapping("/searchGoods")
+    @ResponseBody
+    public List<Goods> searchGoods(@RequestBody(required=true) Map<String,Object> map){
+        List<Goods> goods=new ArrayList<>();
+        goods = goodsService.getSearchGoodsList((String) map.get("name"));
+        return goods;
+    }
+
     @RequestMapping("/listGoodsByTypeId")
     @ResponseBody
     public List<Goods> listGoodsByTypeId(@RequestBody(required=true) Map<String,Object> map){
