@@ -116,7 +116,7 @@
         select DISTINCT o.order_id, o.user_id, o.order_time, o.order_status, o.order_address, o.order_price
         from orders o left join order_details od on o.order_id = od.order_id
         where o.user_id = #{user_id} and od.details_status = "已收货" or od.details_status = "已完成"
-        group by o.order_id desc
+        order by o.order_id desc
     </select>
 
     <select id="getOrderDetailsStatusByOrderDetailsId" resultType="String">

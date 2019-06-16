@@ -66,8 +66,8 @@
         select address
         from user_address
         where user_id = #{userId}
-        and status = 'default'
-        or status is null
+        and (status = 'default'
+        or status is null)
         order by ua_id ASC
         limit 1
     </select>
@@ -83,7 +83,7 @@
     </select>
 
     <select id="getAllAddress" resultType="cn.xy.bean.UserAddress">
-        SELECT * FROM user_address where user_id = #{userId} and status = 'default' or status is null
+        SELECT * FROM user_address where user_id = #{userId} and (status = 'default' or status is null)
     </select>
 
     <update id="changeAddressStatusByUAId">

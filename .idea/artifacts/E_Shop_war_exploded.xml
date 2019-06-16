@@ -59,6 +59,11 @@
           <element id="library" level="project" name="Maven: javax.servlet:servlet-api:2.5" />
         </element>
       </element>
+      <element id="javaee-facet-resources" facet="E_Shop/web/Web2" />
+      <element id="javaee-facet-resources" facet="E_Shop/web/Web4" />
+      <element id="javaee-facet-resources" facet="E_Shop/web/Web5" />
+      <element id="javaee-facet-resources" facet="E_Shop/web/Web" />
+      <element id="javaee-facet-resources" facet="E_Shop/web/Web3" />
     </root>
   </artifact>
 </component>
