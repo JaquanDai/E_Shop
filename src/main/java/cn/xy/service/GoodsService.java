@@ -8,6 +8,7 @@ import java.util.List;
 
 public interface GoodsService {
     public List<GoodsByType> getAllGoodsList();
+    public List<Goods> getSearchGoodsList(String name);
     public List<Goods> getSameGoodsList(int goods_id);
     public Goods getGoodsById(int goodsId);
     List<Goods> getGoodsByType(int TypeId);

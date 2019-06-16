@@ -9,6 +9,7 @@ import java.util.Map;
 
 public interface GoodsDao {
     public List<Goods> getAllGoodsList();
+    public List<Goods> getSearchGoodsList(String name);
     public List<Goods> getSameGoodsList(int goods_id);
     public Goods getGoodsById(int goodsId);
     List<Goods> getGoodsByType(int TypeId);
