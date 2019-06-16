@@ -2,7 +2,6 @@
   <artifact type="exploded-war" name="E_Shop:war exploded">
     <output-path>$PROJECT_DIR$/web/WEB-INF</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="E_Shop/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="E_Shop" />
