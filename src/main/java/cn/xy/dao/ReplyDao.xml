@@ -7,13 +7,19 @@
             resultType="cn.xy.bean.Reply">
         SELECT *
         FROM reply
-        WHERE comment_id = #{commentId} AND reply_status = "active"
+        WHERE comment_id = #{commentId} and reply_status  = "active"
     </select>
 
     <insert id="addReply" parameterType="cn.xy.bean.Reply" keyProperty="reply_id" useGeneratedKeys="true">
         INSERT INTO reply(user_id,comment_id,reply_content,reply_status,reply_time)
         VALUES (#{user_id},#{comment_id},#{reply_content},#{reply_status},#{reply_time})
     </insert>
+
+    <update id="delReply">
+        update reply
+        set reply_status = "delete"
+        where reply_id = #{reply_id}
+    </update>
 
 </mapper>
 

@@ -43,4 +43,22 @@
         where o.operator_id = og.operator_id and og.type_id = #{type_id}
     </select>
 
+    <update id="modifyOperatorPwd" >
+        update operator
+        set operator_pwd = #{newPwd}
+        where operator_id = #{operator_id}
+    </update>
+
+    <select id="getPwdByOperatorId" resultType="String">
+        select operator_pwd
+        from operator
+        where operator_id = #{operator_id}
+    </select>
+
+    <select id="getCommentByOperator" resultType="cn.xy.bean.OperatorComments">
+        select c.comment_id,c.comment_time,g.goods_name,u.user_name,c.star,c.content
+        from comments as c,goods as g,goods_type as gt,users as u,operator_goodstype as og
+        where c.user_id = u.user_id and g.goods_id = c.goods_id and gt.type_id = og.type_id and og.operator_id = #{operator_id} and g.type_id = gt.type_id
+    </select>
+
 </mapper>

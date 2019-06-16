@@ -34,4 +34,19 @@ public class CommentsController {
     public CommentsReply addComments(@RequestBody(required=true) Comments comments){
         return commentsService.addComments(comments);
     }
+
+    @RequestMapping(value = "/delComment",method = RequestMethod.POST)
+    @ResponseBody
+    public void delComment(@RequestBody(required=true)Map<String,Object> map){
+        int comment_id = (int) map.get("comment_id");
+        commentsService.delComment(comment_id);
+    }
+
+    @RequestMapping(value = "/delReply",method = RequestMethod.POST)
+    @ResponseBody
+    public void delReply(@RequestBody(required=true)Map<String,Object> map){
+
+        int reply_id = (int) map.get("reply_id");
+        commentsService.delReply(reply_id );
+    }
 }

@@ -7,7 +7,7 @@
             resultType="cn.xy.bean.Comments">
         SELECT *
         FROM comments
-        WHERE goods_id = #{goodsId} AND comment_status="active"
+        WHERE goods_id = #{goodsId} and comment_status = "active"
     </select>
 
     <insert id="addComments" parameterType="cn.xy.bean.Comments" keyProperty="comment_id" useGeneratedKeys="true">
@@ -15,6 +15,11 @@
         VALUES (#{user_id},#{goods_id},#{content},#{comment_time},#{star},#{comment_status})
     </insert>
 
+    <update id="delComment">
+        update comments
+        set comment_status = "delete"
+        where comment_id = #{comment_id}
+    </update>
 
 </mapper>
 

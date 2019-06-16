@@ -7,4 +7,5 @@ import java.util.List;
 public interface ReplyDao {
     public List<Reply> getReplyByCommentId(int commentId);
     public void addReply(Reply reply);
+    void delReply(int reply_id);
 }

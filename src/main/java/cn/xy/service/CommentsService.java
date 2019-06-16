@@ -11,4 +11,6 @@ public interface CommentsService {
     public List<CommentsReply> getGoodsComments(int goodsId);
     public Reply addReply(Reply reply);
     public CommentsReply addComments(Comments comments);
+    void delComment(int comment_id);
+    void delReply(int reply_id);
 }

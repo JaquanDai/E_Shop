@@ -61,4 +61,14 @@ public class CommentsServiceImpl implements CommentsService {
         return cr;
     }
 
+    @Override
+    public void delComment(int comment_id) {
+        commentsDao.delComment(comment_id);
+    }
+
+    @Override
+    public void delReply(int reply_id) {
+        replyDao.delReply(reply_id);
+    }
+
 }

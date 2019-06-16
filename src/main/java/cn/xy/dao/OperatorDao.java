@@ -2,6 +2,7 @@ package cn.xy.dao;
 
 import cn.xy.bean.GoodsType;
 import cn.xy.bean.Operator;
+import cn.xy.bean.OperatorComments;
 import cn.xy.bean.OperatorOrderDetails;
 import org.apache.ibatis.annotations.Param;
 
@@ -26,5 +27,10 @@ public interface OperatorDao {
     void addOperator(@Param("operator_account") String operator_account,@Param("operator_pwd") String operator_pwd);
 
     List<Operator> getOperatorByType(int type_id);
-
+    //修改密码
+    void modifyOperatorPwd(@Param("operator_id")int operator_id,@Param("newPwd")String newPwd);
+    //获取密码
+    String getPwdByOperatorId(int operator_id);
+    //获得评论
+    List<OperatorComments> getCommentByOperator(int operator_id);
 }

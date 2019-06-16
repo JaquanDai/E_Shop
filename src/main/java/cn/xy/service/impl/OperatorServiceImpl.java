@@ -1,10 +1,11 @@
 package cn.xy.service.impl;
 
 
-import cn.xy.bean.GoodsType;
-import cn.xy.bean.Operator;
-import cn.xy.bean.OperatorOrderDetails;
+import cn.xy.bean.*;
+import cn.xy.dao.CommentsDao;
+import cn.xy.dao.GoodsDao;
 import cn.xy.dao.OperatorDao;
+import cn.xy.dao.TypeDao;
 import cn.xy.service.OperatorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,9 @@ public class OperatorServiceImpl implements OperatorService {
 
     @Autowired
     private OperatorDao operatorDao;
+    @Autowired
+    private GoodsDao goodsDao;
+
 
     public Map operatorLogin(String operatorAccount,String pwd) {
         Map<String,Object> map = new HashMap<>();
@@ -91,6 +95,38 @@ public class OperatorServiceImpl implements OperatorService {
     public List<Operator> getOperatorByType(int type_id) {
         return operatorDao.getOperatorByType(type_id);
     }
+
+    @Override
+    public Map<String, Integer> modifyOperatorPwd(int operator_id, String newPwd,String oldPwd) {
+
+        Map<String,Integer> result = new HashMap<>();
+
+        if(!operatorDao.getPwdByOperatorId(operator_id).equals(oldPwd)){
+            result.put("code",-1);
+        }else{
+            result.put("code",1);
+            operatorDao.modifyOperatorPwd(operator_id,newPwd);
+        }
+        return result;
+
+    }
+
+//    @Override
+//    public List<CommentsReply> getCommentByOperator(int operator_id) {
+//
+//        List<GoodsType> goodsTypes = typeDao.getTypeByOperatorId(operator_id);
+//        List<CommentsReply> commentsReplies = new ArrayList<>();
+//        for (int i = 0;i<goodsTypes.size();i++){
+//            List<Goods> goods = goodsDao.getGoodsByType(goodsTypes.get(i).getType_id());
+//            for(int j=0;j<goods.size();j++){
+//                commentsReplies.addAll(commentsDao.getGoodsComments(goods.get(j).getGoods_id()));
+//            }
+//        }
+//
+//        return commentsReplies;
+//    }
+
+    public List<Goods> getGoodsByType(int TypeId) { return goodsDao.getGoodsByType(TypeId); }
 
 
 }
