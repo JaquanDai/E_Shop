@@ -9,6 +9,7 @@
     <context:component-scan base-package="cn.xy.controller"/>
     <mvc:annotation-driven/>
 
+    <mvc:resources mapping="/images/**" location="/images/"/>
 
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <property name="maxUploadSize" value="104857600" />
