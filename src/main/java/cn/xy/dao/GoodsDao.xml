@@ -55,7 +55,7 @@
 
     <insert id="addGoods" >
         insert into goods
-        values(#{goods_id},#{type_id},#{goods_name},#{inventory},#{description},#{price},'default','active',0)
+        values(#{goods_id},#{type_id},#{goods_name},#{inventory},#{description},#{price},#{goods_img},'active',0)
     </insert>
 
     <update id="modifyGoods" >
