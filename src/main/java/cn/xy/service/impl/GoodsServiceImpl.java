@@ -25,7 +25,7 @@ public class GoodsServiceImpl implements GoodsService {
     public List<GoodsByType> getAllGoodsList() {
         List<Goods> goodsList = goodsDao.getAllGoodsList();
         List<GoodsByType> goodsTypeList = new ArrayList<GoodsByType>();
-        if(goodsList!=null){
+        if(goodsList.size()!=0){
             List<Goods> list = new ArrayList<Goods>();
             list.add(goodsList.get(0));
             for(int i=1;i<goodsList.size();i++){

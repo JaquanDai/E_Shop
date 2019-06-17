@@ -39,8 +39,10 @@ public class CartController {
 
     @RequestMapping(value = "/updateCart",method = RequestMethod.POST)
     @ResponseBody
-    public List<Cart> updateCart(@RequestBody(required=true)List<Cart> carts){
-        return cartService.updateCart(carts);
+    public List<Cart> updateCart(@RequestBody(required=true)List<Cart> carts, HttpServletRequest request){
+        HttpSession session =request.getSession();
+        int userId = (int) session.getAttribute("userId");
+        return cartService.updateCart(carts,userId);
     }
 
     @RequestMapping(value = "/buy",method = RequestMethod.POST)

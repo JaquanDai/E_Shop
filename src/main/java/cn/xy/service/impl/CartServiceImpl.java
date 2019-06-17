@@ -65,7 +65,18 @@ public class CartServiceImpl implements CartService {
 
     }
 
-    public List<Cart> updateCart(List<Cart> carts){
+    public List<Cart> updateCart(List<Cart> carts,int userId){
+        if(carts.size()==0){
+            Orders cart = orderDao.searchCartByUser(userId);
+            if(cart!=null){
+                int id = cart.getOrder_id();
+                List<OrderDetails> cartList = orderDao.getAllCartDetails(id);
+                for(OrderDetails de:cartList){
+                    orderDao.deleteCartDetails(de.getOd_id());
+                }
+            }
+            return carts;
+        }
         int oid = carts.get(0).getOd_id();
         OrderDetails details = orderDao.getCartDetails(oid);
         int order_id = details.getOrder_id();

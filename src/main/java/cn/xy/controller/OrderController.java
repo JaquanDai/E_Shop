@@ -53,8 +53,7 @@ public class OrderController {
             orderService.modifyStatus(od_id,details_status);
             result.put("code",1);
             return result;
-        }
-        else if(status.equals("已发货")&&details_status.equals("已收货")){
+        }else if(status.equals("已发货")&&details_status.equals("已收货")){
             orderService.modifyStatus(od_id,details_status);
             result.put("code",1);
             return result;

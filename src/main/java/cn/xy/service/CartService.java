@@ -9,6 +9,6 @@ import java.util.List;
 public interface CartService {
     public List<OrderDetails> addCart(OrderDetails details);
     public List<Cart> getCart(int order_id);
-    public List<Cart> updateCart(List<Cart> carts);
+    public List<Cart> updateCart(List<Cart> carts,int userId);
     public OrderList buy(OrderList orderList);
 }

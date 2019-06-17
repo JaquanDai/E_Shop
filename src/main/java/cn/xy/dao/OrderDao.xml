@@ -79,7 +79,7 @@
     <select id="bought" resultType="cn.xy.bean.OrderDetails">
         SELECT d.od_id,d.order_id,d.goods_id,d.quantity,d.details_price,d.details_status
         FROM orders o LEFT JOIN order_details d ON o.order_id=d.order_id
-        WHERE d.goods_id = #{goods_id} AND o.user_id = #{user_id} AND d.details_status= "已付款"
+        WHERE d.goods_id = #{goods_id} AND o.user_id = #{user_id} AND d.details_status != "未付款"
     </select>
 
     <update id="modifyStatus">
